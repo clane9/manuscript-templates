@@ -27,17 +27,15 @@
 %% Options
 \newif\ifbfabstract     \bfabstracttrue
 \DeclareOption{rmabstract}{\bfabstractfalse}
-\newif\ifbibskip        \bibskipfalse
-\DeclareOption{bibskip}{\bibskiptrue}
-\newif\ifwatermark        \watermarkfalse
-\DeclareOption{watermark}{\watermarktrue}
+\newif\ifnologo     \nologofalse
+\DeclareOption{nologo}{\nologotrue}
 
 \DeclareOption{draft}{\PassOptionsToClass{draft}{article}}
 \DeclareOption{times}{\@timestrue}
 \DeclareOption{helvet}{\@helvettrue}
 \DeclareOption{twocolumn}{\@tmptwocolumntrue}
 %\DeclareOption{onecolumn}{\@tmptwocolumnfalse}
-\DeclareOption{submit}{\@submittrue \@tmptwocolumnfalse}
+\DeclareOption{submit}{\@submittrue \@tmptwocolumnfalse \nologotrue}
 
 \ProcessOptions
 
@@ -465,7 +463,7 @@
 \RequirePackage{lastpage} % Number of pages in the document
 \pagestyle{fancy}		  % Enables the custom headers/footers
 
-\if@submit
+\ifnologo
   \def\aBioRXiv{{\footnotesize
   \footerfont \@leadauthor\ifnum \value{authors} > 2\hspace{2pt}\textit{et al.}\fi\hspace{7pt}|\hspace{7pt}\today\hspace{7pt}|\hspace{7pt}\thepage\textendash\pageref{LastPage}
   }}

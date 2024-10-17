@@ -10,9 +10,11 @@
 \captionsetup*{format=largeformat} % make figure legend slightly larger than in the paper
 \setcounter{figure}{0} % reset figure counter for Supp. Figures
 \setcounter{equation}{0} % reset equation counter for Supp. Equations
+\setcounter{table}{0} % reset table counter for Supplementary Video Figures
 %\setcounter{page}{1} % reset page count
 \makeatletter 
 \renewcommand{\thefigure}{S\@arabic\c@figure} % make Figure legend start with Figure S
+\renewcommand{\thetable}{S\@arabic\c@table} % make Table legend start with Table S
 \makeatother
 \def\theequation{S\arabic{equation}}
 
@@ -28,3 +30,21 @@
 (\textbf{A}) This is a supplementary figure shown as a two-column image with a legend underneath.}
 \label{suppfig:endosome}
 \end{figure*}
+
+
+\begin{table}[!h]
+    \centering
+    \small
+    \begin{tabular}{p{3cm}|p{2.2cm} p{2.2cm} p{2.2cm} p{2.2cm} p{2.2cm}}
+        Movie & US Release Date & Director & Screenwriter(s) & Story by & Producer\\
+        \hline
+        Episode IV – A New Hope & May 25, 1977 & \multicolumn{3}{c}{George Lucas} & Gary Kurtz\\
+        Episode V – The Empire Strikes Back & May 21, 1980 & Irvin Kershner & Leigh Brackett and Lawrence Kasdan & George Lucas & Gary Kurtz\\
+        Episode VI – Return of the Jedi & May 25, 1983 & Richard Marquand & Lawrence Kasdan and George Lucas & George Lucas & Howard Kazanjian\\
+    \end{tabular}
+    \caption{\textbf{Original ``Star Wars'' Trilogy}\\
+    Extracted from \url{https://en.wikipedia.org/wiki/List_of_Star_Wars_films}.}
+    \label{supptab:st1}
+\end{table}
+
+

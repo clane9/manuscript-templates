@@ -1,11 +1,10 @@
 %% select between bioRxiv style or submission style by commenting either line
-\documentclass[twocolumn]{bioRxiv}
-%\documentclass[submit]{bioRxiv}
+\documentclass[twocolumn,nologo]{bioRxiv}
+% \documentclass[submit]{bioRxiv}
 \renewcommand\familydefault{\sfdefault}
 \usepackage{lipsum}
 
 %% setup specific to this preprint -- add or remove as you need.
-\hyphenation{empire} % prevents word "empire" being split across lines
 \sisetup{range-units = single,
         separate-uncertainty = true,
         multi-part-units = single,
@@ -14,10 +13,15 @@
 
 \begin{document}
 
-%% comment out any files that you don't want to include as sections
-\include{01_Article_MainText}
-\include{02_Article_Supplementary}
-\include{03_Article_SupplementaryVideos}
-\include{04_Article_SupplementaryTables}
+\input{title}
+\input{intro}
+\input{methods}
+\input{results}
+\input{discussion}
+
+\section*{Bibliography}
+\bibliography{refs.bib}
+
+\include{supp}
 
 \end{document}
